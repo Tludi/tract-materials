@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170525191715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "material_units", force: :cascade do |t|
+    t.string "unitType"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "materials", force: :cascade do |t|
+    t.string "itemCode"
+    t.string "description"
+    t.string "itemUnit"
+    t.decimal "unitPrice", precision: 8, scale: 2
+    t.string "orderUnit"
+    t.decimal "conversionRate", precision: 4, scale: 2
+    t.date "priceDate"
+    t.integer "priceAge"
+    t.decimal "markup"
+    t.decimal "wastePercent"
+    t.decimal "wasteQuantity"
+    t.string "jobCostCode"
+    t.integer "productionRate"
+    t.text "note"
+    t.string "laborClassCode"
+    t.decimal "laborClassRate"
+    t.integer "unit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

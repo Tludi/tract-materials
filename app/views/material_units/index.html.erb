@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Material Units</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Unit Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @material_units.each do |material_unit| %>
+      <tr>
+        <td><%= material_unit.unitType %></td>
+        <!-- <td><%= link_to 'Show', material_unit %></td> -->
+        <td><%= link_to 'Edit', edit_material_unit_path(material_unit) %></td>
+        <td><%= link_to 'Destroy', material_unit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Material Unit', new_material_unit_path %>
+
+<br>
+
+<%= link_to 'Materials', materials_path  %>

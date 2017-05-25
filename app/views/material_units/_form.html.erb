@@ -1,0 +1,22 @@
+<%= form_with(model: material_unit, local: true) do |form| %>
+  <% if material_unit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(material_unit.errors.count, "error") %> prohibited this material_unit from being saved:</h2>
+
+      <ul>
+      <% material_unit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :unitType %>
+    <%= form.text_field :unitType, id: :material_unit_unitType %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
