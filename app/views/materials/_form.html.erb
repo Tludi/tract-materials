@@ -25,3 +25,25 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<%= simple_form_for material do |f| %>
+  <%= f.input :itemCode %>
+  <%= f.input :description %>
+  <%= f.input :itemUnit %>
+  <%= f.input :unitPrice %>
+  <%= f.input :orderUnit %>
+  <%= f.input :conversionRate %>
+  <%= f.input :priceDate %>
+  <%= f.input :priceAge %>
+  <%= f.input :markup %>
+  <%= f.input :wastePercent %>
+  <%= f.input :wasteQuantity %>
+  <%= f.input :jobCostCode %>
+  <%= f.input :productionRate %>
+  <%= f.input :note %>
+  <%= f.input :laborClassCode %>
+  <%= f.input :laborClassRate %>
+
+  <%= f.button :submit %>
+<% end %>
+
