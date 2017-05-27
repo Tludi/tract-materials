@@ -57,6 +57,16 @@
 </table>
 
 <br>
+<hr>
+
+<h3>Import Materials</h3>
+<%= form_tag import_materials_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
+<br>
+<hr>
 
 <%= link_to 'New Material', new_material_path %>
 <br>
