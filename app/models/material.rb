@@ -5,22 +5,23 @@ class Material < ApplicationRecord
     header = spreadsheet.row(1)
     (2..spreadsheet.last_row).each do |item|
       Material.create(
-        itemCode: spreadsheet.cell('A', item),
-        description: spreadsheet.cell('B', item), 
-        itemUnit: spreadsheet.cell('C', item),
-        unitPrice: spreadsheet.cell('D', item), 
-        orderUnit: spreadsheet.cell('E', item),
-        conversionRate: spreadsheet.cell('F', item), 
-        priceDate: spreadsheet.cell('G', item), 
-        priceAge: spreadsheet.cell('H', item), 
-        markup: spreadsheet.cell('I', item), 
-        wastePercent: spreadsheet.cell('J', item), 
-        wasteQuantity: spreadsheet.cell('K', item), 
-        jobCostCode: spreadsheet.cell('L', item),
-        productionRate: spreadsheet.cell('M', item), 
-        note: spreadsheet.cell('N', item),  
-        laborClassCode: spreadsheet.cell('O', item), 
-        laborClassRate: spreadsheet.cell('P', item)
+        trade: spreadsheet.cell('A', item),
+        itemCode: spreadsheet.cell('b', item),
+        description: spreadsheet.cell('c', item), 
+        itemUnit: spreadsheet.cell('d', item),
+        unitPrice: spreadsheet.cell('e', item), 
+        orderUnit: spreadsheet.cell('f', item),
+        conversionRate: spreadsheet.cell('g', item), 
+        priceDate: spreadsheet.cell('h', item), 
+        priceAge: spreadsheet.cell('i', item), 
+        markup: spreadsheet.cell('j', item), 
+        wastePercent: spreadsheet.cell('k', item), 
+        wasteQuantity: spreadsheet.cell('l', item), 
+        jobCostCode: spreadsheet.cell('m', item),
+        productionRate: spreadsheet.cell('n', item), 
+        note: spreadsheet.cell('o', item),  
+        laborClassCode: spreadsheet.cell('p', item), 
+        laborClassRate: spreadsheet.cell('q', item)
       )
       # material.save!
     end

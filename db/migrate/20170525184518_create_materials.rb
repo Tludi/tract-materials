@@ -1,6 +1,7 @@
 class CreateMaterials < ActiveRecord::Migration[5.1]
   def change
     create_table :materials do |t|
+      t.string :trade
       t.string :itemCode
       t.string :description
       t.string :itemUnit

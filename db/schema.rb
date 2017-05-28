@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20170525191715) do
   end
 
   create_table "materials", force: :cascade do |t|
+    t.string "trade"
     t.string "itemCode"
     t.string "description"
     t.string "itemUnit"

@@ -1,32 +1,7 @@
-<%= form_with(model: material, local: true) do |form| %>
-  <% if material.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(material.errors.count, "error") %> prohibited this material from being saved:</h2>
 
-      <ul>
-      <% material.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :itemCode %>
-    <%= form.text_field :itemCode, id: :material_itemCode %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :material_description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
 
 <%= simple_form_for material do |f| %>
+  <%= f.input :trade %>
   <%= f.input :itemCode %>
   <%= f.input :description %>
   <%= f.input :itemUnit %>
