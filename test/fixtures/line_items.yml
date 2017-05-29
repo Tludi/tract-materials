@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trade: MyString
+  itemCode: MyString
+  description: MyString
+  quantity: 9.99
+  units: MyString
+
+two:
+  trade: MyString
+  itemCode: MyString
+  description: MyString
+  quantity: 9.99
+  units: MyString

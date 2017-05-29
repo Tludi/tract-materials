@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525191715) do
+ActiveRecord::Schema.define(version: 20170529171200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "line_items", force: :cascade do |t|
+    t.string "trade"
+    t.string "itemCode"
+    t.string "description"
+    t.decimal "quantity"
+    t.string "units"
+    t.integer "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "material_units", force: :cascade do |t|
     t.string "unitType"
@@ -40,6 +51,13 @@ ActiveRecord::Schema.define(version: 20170525191715) do
     t.string "laborClassCode"
     t.decimal "laborClassRate"
     t.integer "unit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "projectName"
+    t.string "projectNumber"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
