@@ -1,15 +1,17 @@
 class LineItem < ApplicationRecord
   belongs_to :project
   
+
+  # needs to be called with the current project in context
   def self.import(file)
     spreadsheet = open_spreadsheet(file)
     spreadsheet.default_sheet = spreadsheet.sheets[0]
     # header = spreadsheet.row(1)
-    # project = Project.first
+    project = Project.first
     # Row 5 is the first data row from the current spreadsheet
     (5..spreadsheet.last_row).each do |item|
       LineItem.create(
-        # project_id: 1,
+        project_id: project.id,
         trade: "space ghost",
         # trade: spreadsheet.cell('d', item),
         itemCode: spreadsheet.cell('e', item),

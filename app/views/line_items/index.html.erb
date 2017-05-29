@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<h3>Project: <%= @project.projectName %></h3>
+<br><hr>
+
 <h1>Line Items</h1>
 
 <table>
@@ -18,7 +21,7 @@
   <tbody>
     <% @line_items.each do |line_item| %>
       <tr>
-        <td><%= line_item.project.projectName %></td>
+        <td><%= line_item.project_id %></td>
         <td><%= line_item.trade %></td>
         <td><%= line_item.itemCode %></td>
         <td><%= line_item.description %></td>

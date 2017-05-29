@@ -5,6 +5,7 @@ class LineItemsController < ApplicationController
   # GET /line_items.json
   def index
     @line_items = LineItem.all
+    @project = Project.first
   end
 
   # GET /line_items/1
@@ -78,6 +79,7 @@ class LineItemsController < ApplicationController
                                         :itemCode, 
                                         :description, 
                                         :quantity, 
-                                        :units)
+                                        :units,
+                                        :project_id)
     end
 end
